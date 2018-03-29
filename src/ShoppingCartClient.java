@@ -15,17 +15,23 @@ public class ShoppingCartClient {
         String next = "";
         Cart shoppingCart = new Cart();
         do {
-            System.out.println("What would you like to do" + next + "?");
+            System.out.print("What would you like to do" + next + "? ");
             input = console.nextLine();
             if (input.equalsIgnoreCase("add")) {
+                System.out.print("Adding: ");
+                input = console.nextLine();
                 while (!input.equalsIgnoreCase("stop")) {
-                    input = console.nextLine();
                     shoppingCart.add(input);
+                    System.out.print("Adding: ");
+                    input = console.nextLine();
                 }
             } else if (input.equalsIgnoreCase("remove")) {
+                System.out.print("Removing: ");
+                input = console.nextLine();
                 while (!input.equalsIgnoreCase("stop")) {
-                    input = console.nextLine();
                     shoppingCart.remove(input);
+                    System.out.print("Removing: ");
+                    input = console.nextLine();
                 }
             }
             next = " next";
