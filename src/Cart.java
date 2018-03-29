@@ -30,8 +30,8 @@ public class Cart {
     public String toString() {
         String result = "";
         for (String s : ingredients) {
-            result += ", " + s;
+            result += s + ", ";
         }
-        return result;
+        return result.substring(0, result.length());
     }
 }
