@@ -9,7 +9,7 @@ public class Cart {
     }
 
     public void add(String ingredient) {
-        ingredients.add(String ingredient);
+        ingredients.add(ingredient);
     }
 
     public void remove(String ingredient) {
@@ -25,5 +25,13 @@ public class Cart {
                 System.out.println(s);
             }
         }
+    }
+
+    public String toString() {
+        String result = "";
+        for (String s : ingredients) {
+            result += s;
+        }
+        return result;
     }
 }
