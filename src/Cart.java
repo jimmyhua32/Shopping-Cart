@@ -32,6 +32,6 @@ public class Cart {
         for (String s : ingredients) {
             result += s + ", ";
         }
-        return result.substring(0, result.length());
+        return result.substring(0, result.length() - 1);
     }
 }
