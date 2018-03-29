@@ -18,19 +18,23 @@ public class ShoppingCartClient {
             System.out.print("What would you like to do" + next + "? ");
             input = console.nextLine();
             if (input.equalsIgnoreCase("add")) {
-                System.out.print("Adding: ");
+                System.out.print("Adding (\"stop\" to quit): ");
                 input = console.nextLine();
                 while (!input.equalsIgnoreCase("stop")) {
                     shoppingCart.add(input);
-                    System.out.print("Adding: ");
+                    System.out.print("Adding (\"stop\" to quit): ");
                     input = console.nextLine();
                 }
             } else if (input.equalsIgnoreCase("remove")) {
-                System.out.print("Removing: ");
+                System.out.print("Removing (\"stop\" to quit): ");
                 input = console.nextLine();
                 while (!input.equalsIgnoreCase("stop")) {
-                    shoppingCart.remove(input);
-                    System.out.print("Removing: ");
+                    try {
+                        shoppingCart.remove(input);
+                    } catch (IllegalArgumentException e) {
+                        System.out.println("Cart does not contain that ingredient!");
+                    }
+                    System.out.print("Removing (\"stop\" to quit): ");
                     input = console.nextLine();
                 }
             }
