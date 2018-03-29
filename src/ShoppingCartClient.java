@@ -22,8 +22,15 @@ public class ShoppingCartClient {
                     input = console.nextLine();
                     shoppingCart.add(input);
                 }
+            } else if (input.equalsIgnoreCase("remove")) {
+                while (!input.equalsIgnoreCase("stop")) {
+                    input = console.nextLine();
+                    shoppingCart.remove(input);
+                }
             }
             next = " next";
         } while(!input.equalsIgnoreCase("quit"));
+        System.out.println(shoppingCart);
+        System.exit(1);
     }
 }
