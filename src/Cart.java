@@ -28,10 +28,10 @@ public class Cart {
     }
 
     public String toString() {
-        String result = "";
+        String result = "[";
         for (String s : ingredients) {
             result += s + ", ";
         }
-        return result.substring(0, result.length() - 2);
+        return result.substring(0, result.length() - 2) + "]";
     }
 }
