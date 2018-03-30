@@ -3,7 +3,8 @@ import java.util.Scanner;
 public class ShoppingCartClient {
     public static void main(String[] args) {
         try {
-            run();
+            Recipe recipe = new Recipe();
+            //run();
         } catch (Exception e) {
             e.printStackTrace();
             System.out.println("Oops, something went wrong!");
@@ -24,11 +25,11 @@ public class ShoppingCartClient {
             input = console.nextLine().toLowerCase();
             switch (input) {
                 case "add":
-                    add(console, shoppingCart);
+                    addToCart(console, shoppingCart);
                     System.out.println(shoppingCart);
                     break;
                 case "remove":
-                    remove(console, shoppingCart);
+                    removeFromCart(console, shoppingCart);
                     System.out.println(shoppingCart);
                     break;
                 case "quit":
@@ -45,7 +46,7 @@ public class ShoppingCartClient {
         } while(!input.equals("quit"));
     }
 
-    public static void add(Scanner console, Cart shoppingCart) {
+    public static void addToCart(Scanner console, Cart shoppingCart) {
         System.out.print("Adding ingredients: ");
         Scanner lineScan = new Scanner(console.nextLine());
         while (lineScan.hasNext()) {
@@ -53,7 +54,7 @@ public class ShoppingCartClient {
         }
     }
 
-    public static void remove(Scanner console, Cart shoppingCart) {
+    public static void removeFromCart(Scanner console, Cart shoppingCart) {
         System.out.print("Removing ingredient: ");
         String remove = console.nextLine();
         try {
